@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>《活法》要点导读 · 稻盛和夫</title>
+  <meta name="description" content="稻盛和夫《活法》核心要点整理：人生方程式、六项精进、工作即修行、利他与反省。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c2420;
+      --ink-soft: #3d4a43;
+      --paper: #f4f1ea;
+      --leaf: #3f6b54;
+      --leaf-deep: #2a4a3a;
+      --amber: #c4a35a;
+      --line: rgba(28, 36, 32, 0.12);
+      --shadow: 0 18px 50px rgba(28, 36, 32, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Noto Serif SC", "Songti SC", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(63, 107, 84, 0.12), transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, rgba(196, 163, 90, 0.12), transparent 50%),
+        linear-gradient(180deg, #f7f5ef 0%, var(--paper) 40%, #ebe7dd 100%);
+      line-height: 1.85;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 2rem, 980px);
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    header.hero {
+      display: grid;
+      gap: 1.75rem;
+      margin-bottom: 3rem;
+      animation: rise 0.9s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .brand {
+      font-family: "ZCOOL XiaoWei", "Noto Serif SC", serif;
+      letter-spacing: 0.35em;
+      font-size: 0.85rem;
+      color: var(--leaf-deep);
+    }
+
+    h1 {
+      font-family: "ZCOOL XiaoWei", "Noto Serif SC", serif;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: 0.08em;
+    }
+
+    .subtitle {
+      max-width: 36em;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
+    .hero-figure {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      animation: rise 1.1s ease 0.1s both;
+    }
+
+    .hero-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    nav.toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      padding: 1rem 0 2rem;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 2.5rem;
+      animation: rise 1s ease 0.15s both;
+    }
+
+    nav.toc a {
+      color: var(--leaf-deep);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    nav.toc a:hover {
+      color: var(--ink);
+      border-bottom-color: var(--amber);
+    }
+
+    section {
+      margin-bottom: 3.2rem;
+      animation: rise 0.8s ease both;
+    }
+
+    section h2 {
+      font-family: "ZCOOL XiaoWei", serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      margin-bottom: 1rem;
+      color: var(--leaf-deep);
+    }
+
+    section h3 {
+      font-size: 1.15rem;
+      margin: 1.4rem 0 0.5rem;
+    }
+
+    p, li { color: var(--ink-soft); font-size: 1.02rem; }
+    p + p { margin-top: 0.9rem; }
+    ul, ol { padding-left: 1.3rem; margin-top: 0.6rem; }
+    li { margin: 0.35rem 0; }
+
+    .equation {
+      display: grid;
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+    }
+
+    .equation-formula {
+      text-align: center;
+      font-family: "ZCOOL XiaoWei", serif;
+      font-size: clamp(1.15rem, 3.2vw, 1.55rem);
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      padding: 0.6rem 0.4rem;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .equation-formula strong { color: var(--leaf-deep); font-weight: 700; }
+
+    .grid-3 {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 760px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      padding: 1.1rem 1.15rem;
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .card .label {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      color: var(--amber);
+      margin-bottom: 0.4rem;
+    }
+
+    .card h3 { margin-top: 0; font-size: 1.05rem; }
+    .card p { font-size: 0.95rem; margin-top: 0.4rem; }
+
+    .media {
+      margin: 1.4rem 0;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .media figcaption {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      padding: 0.7rem 0.9rem;
+      background: rgba(255, 255, 255, 0.5);
+      border-top: 1px solid var(--line);
+    }
+
+    .six-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .six-list li {
+      display: grid;
+      grid-template-columns: 2.4rem 1fr;
+      gap: 0.85rem;
+      align-items: start;
+      padding: 1rem 1.1rem;
+      background: rgba(255, 255, 255, 0.45);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .six-list .num {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--leaf-deep);
+      color: #f7f5ef;
+      font-size: 0.9rem;
+      font-family: "ZCOOL XiaoWei", serif;
+    }
+
+    .six-list strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+
+    .quote {
+      margin: 1.5rem 0;
+      padding: 1.2rem 1.4rem;
+      border-left: 3px solid var(--amber);
+      background: rgba(63, 107, 84, 0.06);
+      font-family: "ZCOOL XiaoWei", serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+    }
+
+    .checklist {
+      columns: 2;
+      column-gap: 2rem;
+      margin-top: 0.8rem;
+    }
+
+    @media (max-width: 640px) {
+      .checklist { columns: 1; }
+    }
+
+    .checklist li { break-inside: avoid; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <p class="brand">KAZUO INAMORI · 稻盛和夫</p>
+        <h1>《活法》要点导读</h1>
+        <p class="subtitle">
+          一本关于「作为人，何谓正确」的人生哲学。稻盛和夫以京瓷、KDDI 与日航的实践，把经营与修行连在一起：
+          用正向思维方式点燃热情，把工作当作磨炼心性的道场，以利他之心走向充实的人生。
+        </p>
+      </div>
+      <figure class="hero-figure">
+        <img src="assets/hero-living.png" alt="书本与新芽：象征活法中的成长与觉醒" width="1600" height="900" />
+      </figure>
+    </header>
+
+    <nav class="toc" aria-label="目录">
+      <a href="#core">核心主张</a>
+      <a href="#equation">人生方程式</a>
+      <a href="#six">六项精进</a>
+      <a href="#work">工作即修行</a>
+      <a href="#altruism">利他与判断基准</a>
+      <a href="#practice">日常可践行</a>
+    </nav>
+
+    <section id="core">
+      <h2>一、核心主张</h2>
+      <p>
+        《活法》要回答的不是「如何赚更多钱」，而是：人为什么活着？怎样活才不枉此生？
+        稻盛认为，人生的目的在于<strong>提高心性、磨炼灵魂</strong>。成败荣辱会消散，留下的是人格与灵魂的纯度。
+      </p>
+      <p>因此，他反复强调一个朴素而锋利的判断基准：</p>
+      <blockquote class="quote">「作为人，何谓正确？」</blockquote>
+      <p>
+        诚实、不骗人、不贪心、不给人添麻烦、同情他人、乐观——这些从小被教导的美德，正是经营人生与事业的原点。
+      </p>
+    </section>
+
+    <section id="equation">
+      <h2>二、人生方程式</h2>
+      <figure class="media">
+        <img src="assets/equation-visual.png" alt="思维方式、热情与能力相互乘积的抽象示意" width="1200" height="900" />
+        <figcaption>结果不是三者相加，而是相乘——思维方式决定方向。</figcaption>
+      </figure>
+
+      <div class="equation">
+        <p class="equation-formula">
+          人生·工作的结果 = <strong>思维方式</strong> × <strong>热情</strong> × <strong>能力</strong>
+        </p>
+        <div class="grid-3">
+          <article class="card">
+            <span class="label">−100 ~ +100</span>
+            <h3>思维方式</h3>
+            <p>人生态度与人格方向。可为负值。方向错了，能力与热情越大，破坏越大。</p>
+          </article>
+          <article class="card">
+            <span class="label">0 ~ 100</span>
+            <h3>热情</h3>
+            <p>持续燃烧的愿望与投入。睡也想、醒也好，把平凡努力推到非凡。</p>
+          </article>
+          <article class="card">
+            <span class="label">0 ~ 100</span>
+            <h3>能力</h3>
+            <p>才智与技能。重要，但不是决定项；可用热情补足，却补不了负向思维。</p>
+          </article>
+        </div>
+      </div>
+
+      <h3>正向思维方式示例</h3>
+      <ul class="checklist">
+        <li>积极、建设性、乐观</li>
+        <li>感恩、知足、不自私</li>
+        <li>善意、同情、关爱</li>
+        <li>勤奋、谦虚、善于协作</li>
+        <li>对事物持肯定态度</li>
+        <li>不为欲望与嫉妒所役</li>
+      </ul>
+    </section>
+
+    <section id="six">
+      <h2>三、六项精进</h2>
+      <p>把哲学落到每一天，稻盛给出可反复操练的「六项精进」：</p>
+      <ol class="six-list">
+        <li>
+          <span class="num">1</span>
+          <div>
+            <strong>付出不亚于任何人的努力</strong>
+            不是一般努力，而是极致投入。工作现场就是修行场。
+          </div>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <div>
+            <strong>要谦虚，不要骄傲</strong>
+            成功时更要低头。谦虚是持续成长与幸福的基础。
+          </div>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <div>
+            <strong>要每天反省</strong>
+            睡前检视言行：是否利己过度？是否伤害他人？以反省抑制小我。
+          </div>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <div>
+            <strong>活着，就要感谢</strong>
+            对生命、他人与境遇常怀感谢，心才能安定清明。
+          </div>
+        </li>
+        <li>
+          <span class="num">5</span>
+          <div>
+            <strong>积善行、思利他</strong>
+            多做善事，优先考虑他人。利他会改变命运的走向。
+          </div>
+        </li>
+        <li>
+          <span class="num">6</span>
+          <div>
+            <strong>不要有感性的烦恼</strong>
+            失败后不沉溺后悔与怨恨；用理性整理问题，立刻投入下一步行动。
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="work">
+      <h2>四、工作即修行</h2>
+      <figure class="media">
+        <img src="assets/diligence-work.png" alt="静谧的工作台，象征埋头做事与心性磨炼" width="1200" height="900" />
+        <figcaption>埋头眼前的工作，本身就是提高心性最有效的方式之一。</figcaption>
+      </figure>
+      <p>
+        稻盛反对把工作仅仅看作谋生手段。他认为：全神贯注于工作，能磨去任性与杂念，
+        培养耐心、集中力与责任感，最终改变人格。
+      </p>
+      <p>
+        「自燃型」的人——能自己点燃热情——比等待别人点燃的「可燃型」更接近非凡。
+        持续努力到「神灵也肯伸手相助」的地步，机会才会向你靠近。
+      </p>
+    </section>
+
+    <section id="altruism">
+      <h2>五、利他与判断基准</h2>
+      <figure class="media">
+        <img src="assets/altruism-light.png" alt="双手释放光亮，象征感谢与利他" width="1200" height="900" />
+        <figcaption>动机至善、私心了无——重大决策前反复自问。</figcaption>
+      </figure>
+      <p>
+        事业扩张、创业抉择、危机应对，稻盛常用同一把尺子：这件事是否符合「作为人的正确」？
+        动机是否至善？是否夹杂私心？
+      </p>
+      <p>
+        利他不是口号，而是经营与人生的战略：为员工、客户与社会着想，长期反而更能成就事业。
+        日航重建等实践，也被他用来印证「哲学可以落地」。
+      </p>
+    </section>
+
+    <section id="practice">
+      <h2>六、读完可马上做的事</h2>
+      <ol>
+        <li><strong>每晚三问</strong>：今天思维方式是正还是负？热情投入了多少？能力用在何处？</li>
+        <li><strong>选一件事做到极致</strong>：把当前工作当作修行，连续 21 天不打折扣。</li>
+        <li><strong>重大决策写下来</strong>：用「作为人，何谓正确？」与「是否利他」各写三条理由。</li>
+        <li><strong>减少感性内耗</strong>：失败后只允许短暂情绪，随后列出下一步行动并立刻执行。</li>
+        <li><strong>每日一件善行</strong>：小到一句感谢、一次成全，重在持续积累。</li>
+      </ol>
+      <p style="margin-top:1.2rem">
+        一句话收束全书：<strong>以正确的思维方式，燃烧热情，磨炼能力；在利他中成就事业，在事业中磨炼灵魂。</strong>
+      </p>
+    </section>
+
+    <footer>
+      <p>本页为《活法》（稻盛和夫）阅读要点整理，便于个人复习与分享，不替代原著。</p>
+      <p>建议对照原书细读「人生方程式」「六项精进」等章节，体会其经营实践背景。</p>
+    </footer>
+  </div>
+</body>
+</html>
